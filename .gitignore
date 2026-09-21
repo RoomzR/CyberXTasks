@@ -1,0 +1,11 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.db
+*.log
+
+# Live bot credentials stay on this machine.
+CyberXTasks.Api/appsettings.json
+CyberXTasks.Bot/appsettings.json

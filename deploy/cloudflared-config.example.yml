@@ -1,0 +1,12 @@
+# Скопируйте в ~/.cloudflared/config.yml и подставьте свои значения.
+#
+# cloudflared tunnel create cyberx-tasks
+# cloudflared tunnel route dns cyberx-tasks tasks.ваш-домен.by
+
+tunnel: YOUR_TUNNEL_ID
+credentials-file: /Users/YOUR_USER/.cloudflared/YOUR_TUNNEL_ID.json
+
+ingress:
+  - hostname: tasks.ваш-домен.by
+    service: http://localhost:5021
+  - service: http_status:404

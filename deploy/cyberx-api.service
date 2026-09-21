@@ -1,0 +1,19 @@
+# Пример systemd для VPS. Путь и пользователь — под себя.
+#
+# sudo cp deploy/cyberx-api.service /etc/systemd/system/
+# sudo systemctl enable --now cyberx-api
+
+[Unit]
+Description=CyberX Tasks API
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/cyberx/api
+ExecStart=/usr/bin/dotnet /opt/cyberx/api/CyberXTasks.Api.dll
+Restart=always
+RestartSec=5
+Environment=ASPNETCORE_URLS=http://127.0.0.1:5021
+Environment=DOTNET_ENVIRONMENT=Production
+
+[Install]
+WantedBy=multi-user.target

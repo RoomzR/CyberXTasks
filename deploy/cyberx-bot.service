@@ -1,0 +1,13 @@
+[Unit]
+Description=CyberX Tasks Telegram Bot
+After=network.target cyberx-api.service
+
+[Service]
+WorkingDirectory=/opt/cyberx/bot
+ExecStart=/usr/bin/dotnet /opt/cyberx/bot/CyberXTasks.Bot.dll
+Restart=always
+RestartSec=5
+Environment=DOTNET_ENVIRONMENT=Production
+
+[Install]
+WantedBy=multi-user.target
